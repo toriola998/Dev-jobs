@@ -16,7 +16,26 @@
                      width="12" height="12" />
             </div>
         </div>
+
+        <div class="search-wrap flex">
+            <input placeholder="Filter by title"/>
+
+            <div class="flex">
+                <button>
+                    <img src="./../assets/mobile/icon-filter.svg" 
+                        alt="click to filter by location and fulltime" 
+                        width="20" height="20"/>
+                </button>
+                <button class="blue-search flex">
+                    <img src="./../assets/mobile/icon-search.svg" alt="search by title"/>
+                </button>
+            </div>
+        </div>
     </header>
+
+    <main>
+
+    </main>
 </template>
 
 <script>
@@ -41,6 +60,36 @@ export default {
     }
 
     main {
-        background-color: #F2F2F2;
+        background-color: #F4F6F8;
+        height: 100vh;
+    }
+
+    input,
+    button {
+        border: 0;
+        outline: 0;
+        background-color: transparent;
+    }
+
+    .search-wrap {
+        background-color: white;
+        height: 4rem;
+        border-radius: 5px;
+        padding: 0 1rem;
+        position: relative;
+        top: 3rem;
+    }
+
+    .search-wrap input::placeholder {
+        font-family: 'Kumbh Sans', sans-serif;
+    }
+
+    .blue-search {
+        background-color: #5964E0;
+        height: 2.5rem;
+        width: 2.5rem;
+        border-radius: 5px;
+        justify-content: center;
+        margin-left: 1rem;
     }
 </style>
