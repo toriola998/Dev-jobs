@@ -34,7 +34,16 @@
     </header>
 
     <main>
-
+        <div class="each-job">
+            <img src="./../assets/logos/scoot.svg" alt="company logo" />
+            <p class="time-wrap">
+                <span class="time">5h ago</span>
+                <span class="job-type">Full time</span>
+            </p> 
+            <h2>Senior Software Engineer</h2>
+            <p class="company-name"> Scoot</p>
+            <p class="company-location"> United Kingdom </p>
+        </div>
     </main>
 </template>
 
@@ -57,11 +66,6 @@ export default {
 
     header > div {
         justify-content: space-between; 
-    }
-
-    main {
-        background-color: #F4F6F8;
-        height: 100vh;
     }
 
     input,
@@ -91,5 +95,45 @@ export default {
         border-radius: 5px;
         justify-content: center;
         margin-left: 1rem;
+    }
+/**MAIN STYLING STARTS */
+    main {
+        background-color: #F4F6F8;
+        height: 100vh;
+        padding: 6rem 1.5rem 0;
+    }
+
+      .each-job {
+        background-color: #fff;
+        padding: 0 1.5rem 2rem;
+        border-radius: 7px;
+    }
+
+    .time-wrap,
+    .company-name {
+        color: #6E8098;
+        font-size: 1rem;
+    }
+
+    .time::after {
+        display: inline-block;
+        content: '';
+        background-color: #6E8098;
+        height: 3px;
+        width: 3px;
+        margin: 0 .7rem;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin: .8rem 0;
+    }
+
+    .company-location {
+        color: #5964E0;
+        font-weight: 700;
+        font-size: .9rem;
+        margin-top: 2rem;
     }
 </style>
