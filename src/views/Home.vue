@@ -18,7 +18,8 @@
         </div>
 
         <div class="search-wrap flex">
-            <input placeholder="Filter by title"/>
+            <label for="job-title" hidden>Job title</label>
+            <input placeholder="Filter by title" type="text" id="job-title" />
 
             <div class="flex">
                 <button>
@@ -35,7 +36,9 @@
 
     <main>
         <div class="each-job">
-            <img src="./../assets/logos/scoot.svg" alt="company logo" />
+            <div class="flex logo-bg">
+                <img src="./../assets/logos/scoot.svg" alt="company logo" />
+            </div>
             <p class="time-wrap">
                 <span class="time">5h ago</span>
                 <span class="job-type">Full time</span>
@@ -43,6 +46,19 @@
             <h2>Senior Software Engineer</h2>
             <p class="company-name"> Scoot</p>
             <p class="company-location"> United Kingdom </p>
+        </div>
+
+        <div class="location-job-type"> 
+            <div class="flex">
+                <img src="./../assets/desktop/icon-location.svg" alt="" />
+                <label for="location" hidden> Location</label>
+                <input placeholder="Filter by location..." type="text" id="location" />
+            </div>
+
+            <input type="checkbox" id="full-time" />
+            <label for="full-time" class="checkbox"> Full time only</label>
+
+            <button type="submit" class="search-btn flex"> Search </button>
         </div>
     </main>
 </template>
@@ -54,6 +70,11 @@ export default {
 </script>
 
 <style scoped>
+    :root {
+        --black: #19202D;
+        --blue: #5964E0;
+        --grey: #6E8098;
+    }
     header {
         background: url('./../assets/mobile/bg-pattern-header.svg');
         width: 100%;
@@ -84,7 +105,7 @@ export default {
         top: 3rem;
     }
 
-    .search-wrap input::placeholder {
+    input::placeholder {
         font-family: 'Kumbh Sans', sans-serif;
     }
 
@@ -103,10 +124,21 @@ export default {
         padding: 6rem 1.5rem 0;
     }
 
-      .each-job {
+    .each-job,
+    .location-job-type {
         background-color: #fff;
         padding: 0 1.5rem 2rem;
         border-radius: 7px;
+    }
+
+    .logo-bg {
+        height: 3rem;
+        width: 3rem;
+        border-radius: 15px;
+        justify-content: center;
+        background-color: red;
+        position: relative;
+        bottom: 1.5rem;
     }
 
     .time-wrap,
@@ -135,5 +167,43 @@ export default {
         font-weight: 700;
         font-size: .9rem;
         margin-top: 2rem;
+    }
+
+    .location-job-type {
+        margin-top: 4rem;
+    }
+
+    .location-job-type > div.flex {
+        padding: 1rem 0;
+    }
+
+    /* .location-job-type > div.flex::after {
+        display: block;
+        content: '';
+        width: 100%;
+        height: 2px;
+        background-color: #6E8098;
+    } */
+
+    .location-job-type > div.flex > img {
+        margin-right: 1rem;
+    }
+
+    .checkbox {
+        color: var(--black);
+        font-weight: 700;
+        margin-left: .8rem;
+    }
+
+    .search-btn {
+        background-color: #5964E0;
+        color: #fff;
+        width: 100%;
+        height: 3rem;
+        font-weight: 700;
+        font-size: 1rem;
+        justify-content: center;
+        border-radius: 5px;
+        margin-top: 1.4rem;
     }
 </style>
