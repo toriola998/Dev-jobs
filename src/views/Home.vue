@@ -53,17 +53,43 @@
     </header>
 
     <main>
-        <div class="each-job">
-            <div class="flex logo-bg">
-                <img src="./../assets/logos/scoot.svg" alt="company logo" />
+        <div class="job-container">
+            <div class="each-job">
+                <div class="flex logo-bg">
+                    <img src="./../assets/logos/scoot.svg" alt="company logo" />
+                </div>
+                <p class="time-wrap">
+                    <span class="time">5h ago</span>
+                    <span class="job-type">Full time</span>
+                </p> 
+                <h2>Senior Software Engineer</h2>
+                <p class="company-name"> Scoot</p>
+                <p class="company-location"> United Kingdom </p>
             </div>
-            <p class="time-wrap">
-                <span class="time">5h ago</span>
-                <span class="job-type">Full time</span>
-            </p> 
-            <h2>Senior Software Engineer</h2>
-            <p class="company-name"> Scoot</p>
-            <p class="company-location"> United Kingdom </p>
+             <div class="each-job">
+                <div class="flex logo-bg">
+                    <img src="./../assets/logos/scoot.svg" alt="company logo" />
+                </div>
+                <p class="time-wrap">
+                    <span class="time">5h ago</span>
+                    <span class="job-type">Full time</span>
+                </p> 
+                <h2>Senior Software Engineer</h2>
+                <p class="company-name"> Scoot</p>
+                <p class="company-location"> United Kingdom </p>
+            </div>
+             <div class="each-job">
+                <div class="flex logo-bg">
+                    <img src="./../assets/logos/scoot.svg" alt="company logo" />
+                </div>
+                <p class="time-wrap">
+                    <span class="time">5h ago</span>
+                    <span class="job-type">Full time</span>
+                </p> 
+                <h2>Senior Software Engineer</h2>
+                <p class="company-name"> Scoot</p>
+                <p class="company-location"> United Kingdom </p>
+            </div>
         </div>
     </main>
 </template>
@@ -191,7 +217,6 @@ export default {
     }
 
     .location-job-type {
-        margin-top: 4rem;
         width: 90%;
     }
 
@@ -230,4 +255,84 @@ export default {
         border-radius: 5px;
         margin-top: 1.4rem;
     }
+@media only screen and (min-width: 520px) {
+     header {
+        padding: 1.5rem 4rem 0;
+    }
+
+    main {
+        padding: 6rem 4rem 0;
+    }
+
+     .location-job-type {
+        width: 60%;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    header {
+        padding: 1.5rem 1.5rem 0;
+    }
+
+    main {
+        padding: 6rem 1.5rem 0;
+    }
+
+    .job-container {
+        display: grid;
+        grid-template-columns: auto auto;
+        column-gap: 1rem;
+        row-gap: 3rem;
+    }
+
+}
+
+@media only screen and (min-width: 720px) {
+    header {
+        padding: 1.5rem 3rem 0;
+    }
+
+    main {
+        padding: 6rem 3rem 0;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    header {
+        padding: 1.5rem 8rem 0;
+    }
+
+    main {
+        padding: 6rem 8rem 0;
+    }
+}
+
+@media only screen and (min-width: 1100px) {
+    header {
+        padding: 1.5rem 3rem 0;
+    }
+
+    main {
+        padding: 6rem 3rem 0;
+    }
+
+    .job-container {
+        grid-template-columns: auto auto auto;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    header {
+        padding: 1.5rem 8rem 0;
+    }
+
+    main {
+        padding: 6rem 8rem 0;
+    }
+
+    .job-container {
+        column-gap: 2rem;
+    }
+}
+
 </style>
