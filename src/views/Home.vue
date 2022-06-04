@@ -17,13 +17,13 @@
             </div>
         </div>
 
-        <form>
+        <form @submit.prevent="">
             <div class="search-wrap flex">
                 <label for="job-title" hidden>Job title</label>
                 <input placeholder="Filter by title" type="text" id="job-title" />
 
                 <div class="flex">
-                    <button>
+                    <button @click="showOverlay = !showOverlay">
                         <img src="./../assets/mobile/icon-filter.svg" 
                             alt="click to filter by location and fulltime" 
                             width="20" height="20"/>
@@ -34,7 +34,7 @@
                 </div>
             </div>
             
-            <div class="overlay flex">
+            <div class="overlay flex" v-show="showOverlay" @click.self="showOverlay = !showOverlay">
                 <div class="location-job-type"> 
                     <div class="flex">
                         <img src="./../assets/desktop/icon-location.svg" alt="" />
@@ -46,7 +46,7 @@
                         <input type="checkbox" id="full-time" />
                         <label for="full-time" class="checkbox"> Full time only</label>
                     </div>
-                    <button type="submit" class="search-btn flex"> Search </button>
+                    <button class="search-btn flex"> Search </button>
                 </div>
             </div>
         </form>
@@ -70,7 +70,11 @@
 
 <script>
 export default {
-
+    data (){
+        return {
+           showOverlay: false, 
+        }
+    }
 }
 </script>
 
@@ -108,6 +112,7 @@ export default {
         padding: 0 1rem;
         position: relative;
         top: 3rem;
+        justify-content: space-between;
     }
 
     input::placeholder {
@@ -187,7 +192,7 @@ export default {
 
     .location-job-type {
         margin-top: 4rem;
-        width: 300px;
+        width: 90%;
     }
 
     .location-job-type > div.flex {
@@ -201,7 +206,7 @@ export default {
         height: 1px;
         background-color: #6E8098;
         opacity: 0.5;
-        margin: 2rem 0;
+        margin: 1.5rem 0;
     }
 
     .location-job-type > div.flex > img {
