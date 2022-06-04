@@ -19,10 +19,13 @@
 
         <form @submit.prevent="">
             <div class="search-wrap flex">
-                <label for="job-title" hidden>Job title</label>
-                <input placeholder="Filter by title" type="text" id="job-title" />
-
                 <div class="flex">
+                    <img src="./../assets/desktop/icon-search.svg" alt=""
+                        width="20" height="20" class="tab-search"/>
+                    <label for="job-title" hidden>Job title</label>
+                    <input placeholder="Filter by title..." type="text" id="job-title" />
+                </div>
+                <div class="flex filter-search">
                     <button @click="showOverlay = !showOverlay">
                         <img src="./../assets/mobile/icon-filter.svg" 
                             alt="click to filter by location and fulltime" 
@@ -55,30 +58,6 @@
     <main>
         <div class="job-container">
             <div class="each-job">
-                <div class="flex logo-bg">
-                    <img src="./../assets/logos/scoot.svg" alt="company logo" />
-                </div>
-                <p class="time-wrap">
-                    <span class="time">5h ago</span>
-                    <span class="job-type">Full time</span>
-                </p> 
-                <h2>Senior Software Engineer</h2>
-                <p class="company-name"> Scoot</p>
-                <p class="company-location"> United Kingdom </p>
-            </div>
-             <div class="each-job">
-                <div class="flex logo-bg">
-                    <img src="./../assets/logos/scoot.svg" alt="company logo" />
-                </div>
-                <p class="time-wrap">
-                    <span class="time">5h ago</span>
-                    <span class="job-type">Full time</span>
-                </p> 
-                <h2>Senior Software Engineer</h2>
-                <p class="company-name"> Scoot</p>
-                <p class="company-location"> United Kingdom </p>
-            </div>
-             <div class="each-job">
                 <div class="flex logo-bg">
                     <img src="./../assets/logos/scoot.svg" alt="company logo" />
                 </div>
@@ -129,6 +108,10 @@ export default {
         border: 0;
         outline: 0;
         background-color: transparent;
+    }
+
+    .tab-search {
+        display: none;
     }
 
     .search-wrap {
@@ -285,6 +268,7 @@ export default {
         row-gap: 3rem;
     }
 
+   
 }
 
 @media only screen and (min-width: 720px) {
@@ -295,6 +279,55 @@ export default {
     main {
         padding: 6rem 3rem 0;
     }
+
+     .overlay {
+        display: flex !important;
+        position: relative;
+    }
+
+    .overlay,
+    .location-job-type {
+        background-color: initial;
+    }
+
+    .location-job-type {
+        position: absolute;
+        top: -0.6rem;
+        right: 1rem;
+        display: flex;
+        align-items: center;
+        width: 73%;
+        justify-content: space-between;
+        padding: 0;
+    }
+
+    .checkbox-wrap {
+        display: flex;
+        align-items: center;
+    }
+
+     .location-job-type > div.flex {
+        padding-top: unset;
+    }
+
+    .filter-search,
+    .checkbox-wrap::before {
+        display: none;
+    }
+
+    .tab-search {
+        display: block;
+        margin-right: .7rem;
+    }
+
+    .search-btn {
+        background-color: #5964E0;
+        width: unset;
+        margin-top: unset;
+        margin-left: 1rem;
+        padding: 0 2rem;
+    }
+
 }
 
 @media only screen and (min-width: 900px) {
