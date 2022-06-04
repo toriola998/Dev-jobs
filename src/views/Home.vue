@@ -17,21 +17,39 @@
             </div>
         </div>
 
-        <div class="search-wrap flex">
-            <label for="job-title" hidden>Job title</label>
-            <input placeholder="Filter by title" type="text" id="job-title" />
+        <form>
+            <div class="search-wrap flex">
+                <label for="job-title" hidden>Job title</label>
+                <input placeholder="Filter by title" type="text" id="job-title" />
 
-            <div class="flex">
-                <button>
-                    <img src="./../assets/mobile/icon-filter.svg" 
-                        alt="click to filter by location and fulltime" 
-                        width="20" height="20"/>
-                </button>
-                <button class="blue-search flex">
-                    <img src="./../assets/mobile/icon-search.svg" alt="search by title"/>
-                </button>
+                <div class="flex">
+                    <button>
+                        <img src="./../assets/mobile/icon-filter.svg" 
+                            alt="click to filter by location and fulltime" 
+                            width="20" height="20"/>
+                    </button>
+                    <button class="blue-search flex">
+                        <img src="./../assets/mobile/icon-search.svg" alt="search by title"/>
+                    </button>
+                </div>
             </div>
-        </div>
+            
+            <div class="overlay flex">
+                <div class="location-job-type"> 
+                    <div class="flex">
+                        <img src="./../assets/desktop/icon-location.svg" alt="" />
+                        <label for="location" hidden> Location</label>
+                        <input placeholder="Filter by location..." type="text" id="location" />
+                    </div>
+
+                    <div class="checkbox-wrap">
+                        <input type="checkbox" id="full-time" />
+                        <label for="full-time" class="checkbox"> Full time only</label>
+                    </div>
+                    <button type="submit" class="search-btn flex"> Search </button>
+                </div>
+            </div>
+        </form>
     </header>
 
     <main>
@@ -46,19 +64,6 @@
             <h2>Senior Software Engineer</h2>
             <p class="company-name"> Scoot</p>
             <p class="company-location"> United Kingdom </p>
-        </div>
-
-        <div class="location-job-type"> 
-            <div class="flex">
-                <img src="./../assets/desktop/icon-location.svg" alt="" />
-                <label for="location" hidden> Location</label>
-                <input placeholder="Filter by location..." type="text" id="location" />
-            </div>
-
-            <input type="checkbox" id="full-time" />
-            <label for="full-time" class="checkbox"> Full time only</label>
-
-            <button type="submit" class="search-btn flex"> Search </button>
         </div>
     </main>
 </template>
@@ -169,21 +174,35 @@ export default {
         margin-top: 2rem;
     }
 
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        background-color: rgba(0,0,0, 0.5);
+    }
+
     .location-job-type {
         margin-top: 4rem;
+        width: 300px;
     }
 
     .location-job-type > div.flex {
-        padding: 1rem 0;
+        padding-top: 1rem;
     }
 
-    /* .location-job-type > div.flex::after {
+    .checkbox-wrap::before {
         display: block;
         content: '';
         width: 100%;
-        height: 2px;
+        height: 1px;
         background-color: #6E8098;
-    } */
+        opacity: 0.5;
+        margin: 2rem 0;
+    }
 
     .location-job-type > div.flex > img {
         margin-right: 1rem;
