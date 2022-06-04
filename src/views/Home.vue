@@ -325,7 +325,7 @@ export default {
         width: unset;
         margin-top: unset;
         margin-left: 1rem;
-        padding: 0 2rem;
+        padding: 0 2.5rem;
     }
 
 }
@@ -352,15 +352,19 @@ export default {
     .job-container {
         grid-template-columns: auto auto auto;
     }
+
+    .location-job-type {
+        width: 60%;
+    }
 }
 
 @media only screen and (min-width: 1200px) {
     header {
-        padding: 1.5rem 8rem 0;
+        padding: 1.5rem 10rem 0;
     }
 
     main {
-        padding: 6rem 8rem 0;
+        padding: 6rem 10rem 0;
     }
 
     .job-container {
