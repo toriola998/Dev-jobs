@@ -57,7 +57,8 @@
                     <div class="checkbox-wrap">
                         <input type="checkbox" 
                                 id="full-time"
-                                value="false"
+                                name="full-time"
+                                @change="isChecked"
                                 v-model="isFullTime" />
                         <label for="full-time" class="checkbox"> Full time only</label>
                     </div>
@@ -94,19 +95,39 @@ export default {
            jobs: jobs,
            jobTitle: "",
            jobLocation: "",
-           isFullTime: false,
+           isFullTime: null,
         }
+    },
+
+    methods: {
+        isChecked(e) {
+            if (e.target.checked) {
+                console.log('checked')
+            } else {
+                console.log('unchecked')
+            }
+        },
+
+        // searchJob() {
+        //     this.jobs = this.jobs.filter( (job) => {
+        //          job.position.toLowerCase().includes(this.jobTitle.toLowerCase())
+        //                 && job.location.toLowerCase().includes(this.jobLocation.toLowerCase()) 
+        //     })
+        // }
     },
 
     computed: {
         renderedJobs() {
             return  this.jobs.filter((job) => { 
-                return (job.position.toLowerCase().includes(this.jobTitle.toLowerCase()) &&
-                job.location.toLowerCase().includes(this.jobLocation.toLowerCase()) )
-                //&&
-               // (!isFullTime || job.contract === "Full Time");
+                return (job.position.toLowerCase().includes(this.jobTitle.toLowerCase())
+                        && job.location.toLowerCase().includes(this.jobLocation.toLowerCase())
+                        && (this.isFullTime = true || job.contract === "Full Time"));
             })
         }
+    },
+
+    mounted() {
+        console.log(this.isFullTime)
     }
         
 }
