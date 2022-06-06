@@ -94,6 +94,7 @@ export default {
 
     header {
         background: url('./../assets/mobile/bg-pattern-header.svg');
+        background-color: var(--blue);
         width: 100%;
         height: 9rem;
         background-position: center;
@@ -342,17 +343,28 @@ export default {
 
 @media only screen and (min-width: 900px) {
     header {
-        padding: 1.5rem 8rem 0;
+        padding: 3rem 8rem 0;
+        background: url('./../assets/desktop/bg-pattern-header.svg');
+        height: 10rem;
     }
 
     main {
         padding: 8rem 8rem 4rem;
     }
+
+    .location-job-type {
+        top: -1rem;
+        width: 65%;
+    }
+
+    .search-wrap {
+        top: 2.5rem;
+    }
 }
 
 @media only screen and (min-width: 1100px) {
     header {
-        padding: 1.5rem 3rem 0;
+        padding: 2rem 3rem 0;
     }
 
     main {
@@ -363,14 +375,18 @@ export default {
         grid-template-columns: auto auto auto;
     }
 
+    .search-wrap {
+        top: 3.5rem;
+    }
+
     .location-job-type {
-        width: 60%;
+        top: 0;
     }
 }
 
 @media only screen and (min-width: 1200px) {
     header {
-        padding: 1.5rem 10rem 0;
+        padding: 2rem 10rem 0;
     }
 
     main {
