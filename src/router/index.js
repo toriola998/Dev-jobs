@@ -19,7 +19,7 @@ const router = createRouter({
             component: Home
         },
         {
-            path: '/job-details/:job',
+            path: '/job-details/:jobPosition',
             name: 'JobDetails',
             component: JobDetails
         },

@@ -70,7 +70,9 @@
 
     <main>
         <div class="job-container">
-            <div class="each-job" v-for="job in renderedJobs" :key="job.id">
+            <router-link class="each-job" 
+                 v-for="job in renderedJobs" :key="job.id" 
+                 :to="{name: 'JobDetails', params: { jobPosition: job.position },}">
                 <div class="flex logo-bg" :style="{backgroundColor: job.logoBackground}">
                     <img :src="require(`@/assets/${job.logo}`)" alt="company logo" />
                 </div>
@@ -81,7 +83,7 @@
                 <h2>{{ job.position }}</h2>
                 <p class="company-name">{{ job.company }}</p>
                 <p class="company-location"> {{ job.location }} </p>
-            </div>
+            </router-link>
         </div>
     </main>
 </template>
