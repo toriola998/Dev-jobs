@@ -19,6 +19,10 @@ export default {
     font-family: 'Kumbh Sans', sans-serif;
 }
 
+body {
+  background-color: #F4F6F8;
+}
+
 .flex {
     display: flex;
     align-items: center;

@@ -57,27 +57,29 @@
 
     <main>
         <div class="job-container">
-            <div class="each-job">
-                <div class="flex logo-bg">
-                    <img src="./../assets/logos/scoot.svg" alt="company logo" />
+            <div class="each-job" v-for="job in jobs" :key="job.id">
+                <div class="flex logo-bg" :style="{backgroundColor: job.logoBackground}">
+                    <img :src="require(`@/assets/${job.logo}`)" alt="company logo" />
                 </div>
                 <p class="time-wrap">
-                    <span class="time">5h ago</span>
-                    <span class="job-type">Full time</span>
+                    <span class="time">{{ job.postedAt }}</span>
+                    <span class="job-type"> {{ job.contract }} </span>
                 </p> 
-                <h2>Senior Software Engineer</h2>
-                <p class="company-name"> Scoot</p>
-                <p class="company-location"> United Kingdom </p>
+                <h2>{{ job.position }}</h2>
+                <p class="company-name">{{ job.company }}</p>
+                <p class="company-location"> {{ job.location }} </p>
             </div>
         </div>
     </main>
 </template>
 
 <script>
+import jobs from '../data.json'
 export default {
     data (){
         return {
-           showOverlay: false, 
+           showOverlay: false,
+           jobs: jobs,
         }
     }
 }
@@ -89,10 +91,11 @@ export default {
         --blue: #5964E0;
         --grey: #6E8098;
     }
+
     header {
         background: url('./../assets/mobile/bg-pattern-header.svg');
         width: 100%;
-        height: 8rem;
+        height: 9rem;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -138,9 +141,16 @@ export default {
     }
 /**MAIN STYLING STARTS */
     main {
-        background-color: #F4F6F8;
-        height: 100vh;
-        padding: 6rem 1.5rem 0;
+        padding: 6rem 1.5rem 4rem;
+    }
+
+    .each-job {
+        margin-bottom: 3rem;
+    }
+
+    button:hover,
+    .each-job:hover {
+        cursor: pointer;
     }
 
     .each-job,
@@ -155,7 +165,6 @@ export default {
         width: 3rem;
         border-radius: 15px;
         justify-content: center;
-        background-color: red;
         position: relative;
         bottom: 1.5rem;
     }
@@ -258,7 +267,7 @@ export default {
     }
 
     main {
-        padding: 6rem 1.5rem 0;
+        padding: 6rem 1.5rem 4rem;
     }
 
     .job-container {
@@ -266,18 +275,21 @@ export default {
         grid-template-columns: auto auto;
         column-gap: 1rem;
         row-gap: 3rem;
+    } 
+    
+     .each-job {
+        margin-bottom: initial;
     }
-
-   
 }
 
 @media only screen and (min-width: 720px) {
     header {
-        padding: 1.5rem 3rem 0;
+        padding: 2rem 3rem 0;
+        background: url('./../assets/tablet/bg-pattern-header.svg');
     }
 
     main {
-        padding: 6rem 3rem 0;
+        padding: 8rem 3rem 4rem;
     }
 
      .overlay {
@@ -294,13 +306,12 @@ export default {
         position: absolute;
         top: -0.6rem;
         right: 1rem;
-        display: flex;
-        align-items: center;
         width: 73%;
         justify-content: space-between;
         padding: 0;
     }
 
+    .location-job-type,
     .checkbox-wrap {
         display: flex;
         align-items: center;
@@ -327,7 +338,6 @@ export default {
         margin-left: 1rem;
         padding: 0 2.5rem;
     }
-
 }
 
 @media only screen and (min-width: 900px) {
@@ -336,7 +346,7 @@ export default {
     }
 
     main {
-        padding: 6rem 8rem 0;
+        padding: 8rem 8rem 4rem;
     }
 }
 
@@ -346,7 +356,7 @@ export default {
     }
 
     main {
-        padding: 6rem 3rem 0;
+        padding: 8rem 3rem 4rem;
     }
 
     .job-container {
@@ -364,7 +374,7 @@ export default {
     }
 
     main {
-        padding: 6rem 10rem 0;
+        padding: 8rem 10rem 4rem;
     }
 
     .job-container {
