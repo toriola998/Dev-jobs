@@ -20,10 +20,15 @@
         <form @submit.prevent="">
             <div class="search-wrap flex">
                 <div class="flex">
-                    <img src="./../assets/desktop/icon-search.svg" alt=""
-                        width="20" height="20" class="tab-search"/>
+                    <img src="./../assets/desktop/icon-search.svg" 
+                         alt=""
+                         width="20" height="20" 
+                         class="tab-search"/>
                     <label for="job-title" hidden>Job title</label>
-                    <input placeholder="Filter by title..." type="text" id="job-title" />
+                    <input placeholder="Filter by title..." 
+                           type="text" 
+                           id="job-title"
+                           v-model="jobTitle" />
                 </div>
                 <div class="flex filter-search">
                     <button @click="showOverlay = !showOverlay">
@@ -32,7 +37,8 @@
                             width="20" height="20"/>
                     </button>
                     <button class="blue-search flex">
-                        <img src="./../assets/mobile/icon-search.svg" alt="search by title"/>
+                        <img src="./../assets/mobile/icon-search.svg" 
+                             alt="search by title"/>
                     </button>
                 </div>
             </div>
@@ -42,11 +48,17 @@
                     <div class="flex">
                         <img src="./../assets/desktop/icon-location.svg" alt="" />
                         <label for="location" hidden> Location</label>
-                        <input placeholder="Filter by location..." type="text" id="location" />
+                        <input placeholder="Filter by location..." 
+                               type="text" 
+                               id="location"
+                               v-model="jobLocation" />
                     </div>
 
                     <div class="checkbox-wrap">
-                        <input type="checkbox" id="full-time" />
+                        <input type="checkbox" 
+                                id="full-time"
+                                value="false"
+                                v-model="isFullTime" />
                         <label for="full-time" class="checkbox"> Full time only</label>
                     </div>
                     <button class="search-btn flex"> Search </button>
@@ -57,7 +69,7 @@
 
     <main>
         <div class="job-container">
-            <div class="each-job" v-for="job in jobs" :key="job.id">
+            <div class="each-job" v-for="job in renderedJobs" :key="job.id">
                 <div class="flex logo-bg" :style="{backgroundColor: job.logoBackground}">
                     <img :src="require(`@/assets/${job.logo}`)" alt="company logo" />
                 </div>
@@ -80,8 +92,23 @@ export default {
         return {
            showOverlay: false,
            jobs: jobs,
+           jobTitle: "",
+           jobLocation: "",
+           isFullTime: false,
+        }
+    },
+
+    computed: {
+        renderedJobs() {
+            return  this.jobs.filter((job) => { 
+                return (job.position.toLowerCase().includes(this.jobTitle.toLowerCase()) &&
+                job.location.toLowerCase().includes(this.jobLocation.toLowerCase()) )
+                //&&
+               // (!isFullTime || job.contract === "Full Time");
+            })
         }
     }
+        
 }
 </script>
 
