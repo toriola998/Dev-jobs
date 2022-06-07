@@ -10,17 +10,27 @@
                 <a :href="job.website" class="company-site flex">Company Site</a>  
             </div>
         </div>
+    </header>
 
-        <div>
+    <main>
+        <div class="job-details">
             <p class="time-wrap">
                 <span class="time">{{ job.postedAt }}</span>
                 <span class="job-type"> {{ job.contract }} </span>
             </p> 
             <h2>{{ job.position }}</h2>
             <p class="company-location"> {{ job.location }} </p>
-            <BlueButton btnAction="Apply Now"/>
+            <BlueButton btnAction="Apply Now" class="apply"/>
+            <p class="desc">{{ job.description }}</p>
+
+            <h3>Requirement</h3>
+            <p class="desc">{{ job.requirements.content}}</p>
+
+            <ul class="requirement">
+                <li v-for="item in job.requirements.items" :key="item">{{ item }}</li>
+            </ul>
         </div>
-    </header>
+    </main>
     
 </template>
 
@@ -103,5 +113,42 @@ export default {
         font-size: .9rem;
         border-radius: 5px;
         height: 2.5rem;
+    }
+
+    main {
+        padding: 0 1.5rem;
+    }
+
+    .job-details {
+        background-color: #fff;
+        border-radius: 5px;
+        padding: 2rem 1.5rem;
+    }
+
+    .apply {
+        margin: 3rem 0 2rem;
+    }
+
+    h3 {
+        margin: 5rem 0 2rem;
+    }
+
+    .desc,
+    ul li {
+        color: var(--grey);
+        line-height: 1.7;
+        font-size: .97rem;
+    }
+
+    ul {
+        padding-left: 1rem;
+    }
+
+    .requirement {
+        margin: 2rem 0;
+    }
+
+    .requirement li{
+        padding-left: 1rem;
     }
 </style>
