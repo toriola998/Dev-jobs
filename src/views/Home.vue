@@ -189,10 +189,6 @@ export default {
         padding: 6rem 1.5rem 4rem;
     }
 
-    h2 {
-        color: var(--black);
-    }
-
     .each-job {
         margin-bottom: 3rem;
         display: inline-block;
@@ -210,34 +206,6 @@ export default {
         border-radius: 7px;
     }
 
-    .time-wrap,
-    .company-name {
-        color: #6E8098;
-        font-size: 1rem;
-    }
-
-    .time::after {
-        display: inline-block;
-        content: '';
-        background-color: #6E8098;
-        height: 3px;
-        width: 3px;
-        margin: 0 .7rem;
-    }
-
-    h2 {
-        font-size: 1.1rem;
-        font-weight: 700;
-        margin: .8rem 0;
-    }
-
-    .company-location {
-        color: #5964E0;
-        font-weight: 700;
-        font-size: .9rem;
-        margin-top: 2rem;
-    }
-
     .overlay {
         position: fixed;
         top: 0;
@@ -251,6 +219,10 @@ export default {
 
     .location-job-type {
         width: 90%;
+    }
+    
+    .company-location {
+        margin-top: 2rem;
     }
 
     .location-job-type > div.flex {

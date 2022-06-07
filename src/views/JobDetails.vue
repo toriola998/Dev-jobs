@@ -10,6 +10,15 @@
                 <a :href="job.website" class="company-site flex">Company Site</a>  
             </div>
         </div>
+
+        <div>
+            <p class="time-wrap">
+                <span class="time">{{ job.postedAt }}</span>
+                <span class="job-type"> {{ job.contract }} </span>
+            </p> 
+            <h2>{{ job.position }}</h2>
+            <p class="company-location"> {{ job.location }} </p>
+        </div>
     </header>
     
 </template>
@@ -61,18 +70,20 @@ export default {
         margin: auto;
     }
 
-    h1, p, .company-site {
+    h1,
+    .site-name,
+    .company-site {
         text-align: center;
     }
 
     h1 {
-        font-size: 1rem;
+        font-size: 1.3rem;
     }
 
     .site-name {
         text-transform: lowercase;
         color: var(--grey);
-        margin: .5rem 0;
+        margin: .5rem 0 1.5rem;
     }
 
     .company-site {
@@ -82,6 +93,7 @@ export default {
         width: 9rem;
         color: var(--blue);
         font-weight: 700;
+        font-size: .9rem;
         border-radius: 5px;
         height: 2.5rem;
     }
