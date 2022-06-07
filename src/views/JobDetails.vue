@@ -3,13 +3,12 @@
         <div class="heading">
             <div class="heading-inner"> 
                 <div class="flex logo-bg" :style="{backgroundColor: job.logoBackground}">
-                <img :src="require(`@/assets/${job.logo}`)" alt="company logo" />
+                    <img :src="require(`@/assets/${job.logo}`)" alt="company logo" />
+                </div>
+                <h1>{{ job.company }}</h1>
+                <p class="site-name">{{ job.company}}.com</p>
+                <a :href="job.website" class="company-site flex">Company Site</a>  
             </div>
-            <h1>{{ job.company }}</h1>
-            <p>{{ job.company}}.name</p>
-            <a :href="job.website" class="company-site">Company Site</a>
-            </div>
-            
         </div>
     </header>
     
@@ -36,7 +35,13 @@ export default {
             })
         },
 
-    }
+    },
+
+    watch: {
+        '$route' () {
+            this.job
+        }
+    },
 }
 </script>
 
@@ -49,17 +54,35 @@ export default {
     .heading-inner {
         background-color: #fff;
         border-radius: 5px;
+        padding-bottom: 2rem ;
     }
 
     .logo-bg{
         margin: auto;
     }
 
-    .company-site {
-        display: block;
-    }
-
     h1, p, .company-site {
         text-align: center;
+    }
+
+    h1 {
+        font-size: 1rem;
+    }
+
+    .site-name {
+        text-transform: lowercase;
+        color: var(--grey);
+        margin: .5rem 0;
+    }
+
+    .company-site {
+        justify-content: center;
+        background-color: var(--lightBlue);
+        margin: auto;
+        width: 9rem;
+        color: var(--blue);
+        font-weight: 700;
+        border-radius: 5px;
+        height: 2.5rem;
     }
 </style>

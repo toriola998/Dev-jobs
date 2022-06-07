@@ -27,6 +27,7 @@ a {
         --black: #19202D;
         --blue: #5964E0;
         --grey: #6E8098;
+        --lightBlue: #e9ebfd;
     }
 
 body {

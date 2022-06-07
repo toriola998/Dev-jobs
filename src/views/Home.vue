@@ -195,6 +195,7 @@ export default {
 
     .each-job {
         margin-bottom: 3rem;
+        display: inline-block;
     }
 
     button:hover,
