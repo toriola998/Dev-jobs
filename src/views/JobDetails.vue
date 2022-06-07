@@ -13,22 +13,35 @@
     </header>
 
     <main>
-        <div class="job-details">
-            <p class="time-wrap">
-                <span class="time">{{ job.postedAt }}</span>
-                <span class="job-type"> {{ job.contract }} </span>
-            </p> 
-            <h2>{{ job.position }}</h2>
-            <p class="company-location"> {{ job.location }} </p>
-            <BlueButton btnAction="Apply Now" class="apply"/>
-            <p class="desc">{{ job.description }}</p>
+        <div class="details-wrap">
+            <div class="job-details">
+                <p class="time-wrap">
+                    <span class="time">{{ job.postedAt }}</span>
+                    <span class="job-type"> {{ job.contract }} </span>
+                </p> 
+                <h2>{{ job.position }}</h2>
+                <p class="company-location"> {{ job.location }} </p>
+                <BlueButton btnAction="Apply Now" class="apply"/>
+                <p class="desc">{{ job.description }}</p>
 
-            <h3>Requirement</h3>
-            <p class="desc">{{ job.requirements.content}}</p>
+                <h3>Requirement</h3>
+                <p class="desc">{{ job.requirements.content}}</p>
 
-            <ul class="requirement">
-                <li v-for="item in job.requirements.items" :key="item">{{ item }}</li>
-            </ul>
+                <ul class="requirement">
+                    <li v-for="item in job.requirements.items" :key="item">{{ item }}</li>
+                </ul>
+
+                <h3>What You Will Do</h3>
+                <p class="desc">{{ job.role.content}}</p>
+
+                <ul class="requirement role">
+                    <li v-for="item in job.role.items" :key="item">{{ item }}</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer flex">
+            <BlueButton btnAction="Apply Now" class="apply" />
         </div>
     </main>
     
@@ -115,7 +128,7 @@ export default {
         height: 2.5rem;
     }
 
-    main {
+    .details-wrap {
         padding: 0 1.5rem;
     }
 
@@ -150,5 +163,18 @@ export default {
 
     .requirement li{
         padding-left: 1rem;
+    }
+
+    .role {
+        list-style-type: decimal;
+    }
+
+    .footer {
+        background-color: #fff;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+        height: 5rem;
+        margin-top: 3rem;
+        padding: 0 1.5rem;
     }
 </style>
