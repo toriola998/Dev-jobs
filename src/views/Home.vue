@@ -136,12 +136,6 @@ export default {
 </script>
 
 <style scoped>
-    :root {
-        --black: #19202D;
-        --blue: #5964E0;
-        --grey: #6E8098;
-    }
-
     header {
         background: url('./../assets/mobile/bg-pattern-header.svg');
         background-color: var(--blue);
@@ -195,6 +189,10 @@ export default {
         padding: 6rem 1.5rem 4rem;
     }
 
+    h2 {
+        color: var(--black);
+    }
+
     .each-job {
         margin-bottom: 3rem;
     }
@@ -209,15 +207,6 @@ export default {
         background-color: #fff;
         padding: 0 1.5rem 2rem;
         border-radius: 7px;
-    }
-
-    .logo-bg {
-        height: 3rem;
-        width: 3rem;
-        border-radius: 15px;
-        justify-content: center;
-        position: relative;
-        bottom: 1.5rem;
     }
 
     .time-wrap,
