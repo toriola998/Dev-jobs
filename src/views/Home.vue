@@ -151,13 +151,6 @@ export default {
         justify-content: space-between; 
     }
 
-    input,
-    button {
-        border: 0;
-        outline: 0;
-        background-color: transparent;
-    }
-
     .tab-search {
         display: none;
     }
@@ -220,7 +213,7 @@ export default {
     .location-job-type {
         width: 90%;
     }
-    
+
     .company-location {
         margin-top: 2rem;
     }

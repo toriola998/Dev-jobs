@@ -18,6 +18,7 @@
             </p> 
             <h2>{{ job.position }}</h2>
             <p class="company-location"> {{ job.location }} </p>
+            <BlueButton btnAction="Apply Now"/>
         </div>
     </header>
     
@@ -25,6 +26,7 @@
 
 <script>
 import jobs from '../data.json'
+import BlueButton from './../components/BlueButton.vue'
 export default {
     name: 'JobDetails',
     data() {
@@ -32,6 +34,11 @@ export default {
             jobs: jobs
         }
     },
+
+    components: {
+        BlueButton
+    },  
+
     computed: {
         jobPosition(){
              return this.$route.params.jobPosition

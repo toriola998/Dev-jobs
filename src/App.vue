@@ -24,19 +24,26 @@ export default {
     }
 
     :root {
-            --black: #19202D;
-            --blue: #5964E0;
-            --grey: #6E8098;
-            --lightBlue: #e9ebfd;
-        }
+        --black: #19202D;
+        --blue: #5964E0;
+        --grey: #6E8098;
+        --lightBlue: #e9ebfd;
+    }
 
     body {
-    background-color: #F4F6F8;
+        background-color: #F4F6F8;
     }
 
     .flex {
         display: flex;
         align-items: center;
+    }
+
+    input,
+    button {
+        border: 0;
+        outline: 0;
+        background-color: transparent;
     }
 
     .logo-bg {
