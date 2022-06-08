@@ -19,13 +19,17 @@
     <main>
         <div class="details-wrap">
             <div class="job-details">
-                <p class="time-wrap">
-                    <span class="time">{{ job.postedAt }}</span>
-                    <span class="job-type"> {{ job.contract }} </span>
-                </p> 
-                <h2>{{ job.position }}</h2>
-                <p class="company-location"> {{ job.location }} </p>
-                <BlueButton btnAction="Apply Now" class="apply"/>
+                <div class="flex-details2">
+                    <div>
+                        <p class="time-wrap">
+                            <span class="time">{{ job.postedAt }}</span>
+                            <span class="job-type"> {{ job.contract }} </span>
+                        </p> 
+                        <h2>{{ job.position }}</h2>
+                        <p class="company-location"> {{ job.location }} </p>
+                    </div>
+                    <BlueButton btnAction="Apply Now" class="apply"/>
+                </div>
                 <p class="desc">{{ job.description }}</p>
 
                 <h3>Requirement</h3>
@@ -210,7 +214,8 @@ export default {
     }
 
     .heading-inner,
-    .flex-details {
+    .flex-details,
+    .flex-details2 {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -219,6 +224,16 @@ export default {
     .flex-details {
         width: 100%;
         padding: 0 3rem;
+    }
+
+    .apply {
+        padding: 0 1.5rem;
+        width: initial;
+        margin: initial;
+    }
+
+    .flex-details2 {
+        margin-bottom: 3rem;
     }
 }
 </style>
