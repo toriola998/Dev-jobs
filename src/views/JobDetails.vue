@@ -5,9 +5,13 @@
                 <div class="flex logo-bg" :style="{backgroundColor: job.logoBackground}">
                     <img :src="require(`@/assets/${job.logo}`)" alt="company logo" />
                 </div>
-                <h1>{{ job.company }}</h1>
-                <p class="site-name">{{ job.company}}.com</p>
-                <a :href="job.website" class="company-site flex">Company Site</a>  
+                <div class="flex-details">
+                    <div>
+                        <h1>{{ job.company }}</h1>
+                        <p class="site-name">{{ job.company}}.com</p>
+                    </div>
+                    <a :href="job.website" class="company-site flex">Company Site</a> 
+                </div> 
             </div>
         </div>
     </header>
@@ -177,4 +181,44 @@ export default {
         margin-top: 3rem;
         padding: 0 1.5rem;
     }
+@media only screen and (min-width: 520px) {
+    .logo-bg {
+        position: initial;
+        border-radius: initial;
+        border-bottom-left-radius: 8px;
+        height: 7rem;
+        width: 8rem;
+    }
+
+    .logo-bg img{
+        height: 1rem;
+    }
+
+    h1,
+    .site-name {
+        text-align: initial;
+        margin: 0.5rem 0 0 0;
+    }
+
+    .logo-bg,
+    .company-site {
+        margin: initial;
+    }
+
+    .heading-inner {
+        padding-bottom: initial;
+    }
+
+    .heading-inner,
+    .flex-details {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .flex-details {
+        width: 100%;
+        padding: 0 3rem;
+    }
+}
 </style>
