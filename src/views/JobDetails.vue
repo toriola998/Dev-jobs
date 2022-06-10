@@ -48,8 +48,14 @@
             </div>
         </div>
 
-        <div class="footer flex">
-            <BlueButton btnAction="Apply Now" class="apply" />
+        <div class="footer">
+            <div class="flex">
+                <div class="footer-job">
+                    <h2>{{ job.position }}</h2>
+                    <p>{{ job.company }}</p>
+                </div>
+                <BlueButton btnAction="Apply Now" class="apply" />
+            </div>
         </div>
     </main>
     
@@ -185,6 +191,11 @@ export default {
         margin-top: 3rem;
         padding: 0 1.5rem;
     }
+
+    .footer-job{
+        display: none;
+    }
+
 @media only screen and (min-width: 520px) {
     .logo-bg {
         position: initial;
@@ -234,6 +245,48 @@ export default {
 
     .flex-details2 {
         margin-bottom: 3rem;
+    }
+    
+    .footer {
+        justify-content: space-between;
+    }
+    .footer-job {
+        display: block;
+    }
+}
+
+@media only screen and (min-width: 700px) {
+    .job-details {
+        padding: 2rem 4rem;
+    }
+
+    .footer {
+        padding: 0 4rem;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .heading,
+    .details-wrap,
+    .footer {
+        padding: 0 8rem;
+    }
+
+    .job-details {
+        padding: 2rem;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    header,
+    .job-details {
+        max-width: 900px;
+        margin: auto;
+    }
+
+    .heading,
+    .details-wrap  {
+        padding: 0 5rem;
     }
 }
 </style>
