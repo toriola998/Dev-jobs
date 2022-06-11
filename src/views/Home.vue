@@ -46,7 +46,7 @@
                                 v-model="isFullTime" />
                         <label for="full-time" class="checkbox"> Full time only</label>
                     </div>
-                    <button class="search-btn flex"> Search </button>
+                    <button class="search-btn flex" @click="searchJob()"> Search </button>
                 </div>
             </div>
         </form>
@@ -55,7 +55,7 @@
     <main>
         <div class="job-container">
             <router-link class="each-job" 
-                 v-for="job in renderedJobs" :key="job.id" 
+                 v-for="job in jobs" :key="job.id" 
                  :to="{name: 'JobDetails', params: { jobPosition: job.position },}">
                 <div class="flex logo-bg" :style="{backgroundColor: job.logoBackground}">
                     <img :src="require(`@/assets/${job.logo}`)" alt="company logo" />
@@ -94,28 +94,32 @@ export default {
         isChecked(e) {
             if (e.target.checked) {
                 console.log('checked')
+                return true
             } else {
                 console.log('unchecked')
+                return false
             }
         },
 
-        // searchJob() {
-        //     this.jobs = this.jobs.filter( (job) => {
-        //          job.position.toLowerCase().includes(this.jobTitle.toLowerCase())
-        //                 && job.location.toLowerCase().includes(this.jobLocation.toLowerCase()) 
-        //     })
-        // }
-    },
-
-    computed: {
-        renderedJobs() {
-            return  this.jobs.filter((job) => { 
-                return (job.position.toLowerCase().includes(this.jobTitle.toLowerCase())
-                        && job.location.toLowerCase().includes(this.jobLocation.toLowerCase())
-                        && (this.isFullTime = true || job.contract === "Full Time"));
+        searchJob() {
+            this.jobs = this.jobs.filter( (job) => {
+               return job.position.toLowerCase().includes(this.jobTitle.toLowerCase())
+                        && job.location.toLowerCase().includes(this.jobLocation.toLowerCase()) 
+                        && (this.isChecked = true ? job.contract == "Full Time" : '' )
             })
         }
     },
+
+    // computed: {
+    //     renderedJobs() {
+    //         return  this.jobs.filter((job) => { 
+    //             return (job.position.toLowerCase().includes(this.jobTitle.toLowerCase())
+    //                     && job.location.toLowerCase().includes(this.jobLocation.toLowerCase()) )
+    //                     //&& (this.isChecked = true ? job.contract === "Full Time" : '' ))
+    //                      //(this.isFullTime = true || job.contract === "Full Time"));
+    //         })
+    //     }
+    // },
 
     mounted() {
         console.log(this.isFullTime)

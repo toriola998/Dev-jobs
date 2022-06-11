@@ -206,7 +206,7 @@ export default {
         height: 7rem;
         width: 8rem;
     }
-    
+
     h1,
     .site-name {
         text-align: initial;
@@ -266,9 +266,7 @@ export default {
     
     .job-details {
         padding: 2rem 4rem;
-    }
-
-    
+    }  
 }
 
 @media only screen and (min-width: 900px) {
