@@ -1,10 +1,10 @@
 <template>
-    <button class="search-btn flex"> {{ btnAction }} </button>
+    <a  :href="applyLink" class="search-btn flex"> {{ btnAction }} </a>
 </template>
 
 <script>
 export default {
-    props: ['btnAction']
+    props: ['btnAction', 'applyLink']
 }
 </script>
 

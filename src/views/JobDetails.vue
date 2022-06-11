@@ -28,7 +28,7 @@
                         <h2>{{ job.position }}</h2>
                         <p class="company-location"> {{ job.location }} </p>
                     </div>
-                    <BlueButton btnAction="Apply Now" class="apply"/>
+                    <BlueButton btnAction="Apply Now" :applyLink="job.apply" class="apply"/>
                 </div>
                 <p class="desc">{{ job.description }}</p>
 
@@ -54,7 +54,7 @@
                     <h2>{{ job.position }}</h2>
                     <p>{{ job.company }}</p>
                 </div>
-                <BlueButton btnAction="Apply Now" class="apply" />
+                <BlueButton btnAction="Apply Now" :applyLink="job.apply" class="apply" />
             </div>
         </div>
     </main>
