@@ -187,7 +187,6 @@ export default {
         background-color: #fff;
         border-top-right-radius: 5px;
         border-top-left-radius: 5px;
-        height: 5rem;
         margin-top: 3rem;
         padding: 0 1.5rem;
     }
@@ -247,9 +246,11 @@ export default {
         margin-bottom: 3rem;
     }
     
-    .footer {
+    .footer > .flex{
         justify-content: space-between;
+        height: 8rem;
     }
+
     .footer-job {
         display: block;
     }
@@ -260,9 +261,9 @@ export default {
         padding: 2rem 4rem;
     }
 
-    .footer {
+    /* .footer {
         padding: 0 4rem;
-    }
+    } */
 }
 
 @media only screen and (min-width: 900px) {
@@ -278,13 +279,13 @@ export default {
 }
 
 @media only screen and (min-width: 1200px) {
-    header,
-    .job-details {
+    .heading-inner,
+    .job-details,
+    .footer > .flex {
         max-width: 900px;
         margin: auto;
     }
 
-    .heading,
     .details-wrap  {
         padding: 0 5rem;
     }
