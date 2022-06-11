@@ -54,6 +54,12 @@ export default {
         background: url('./../assets/desktop/bg-pattern-header.svg');
         height: 10rem;
     }
+}
 
+@media only screen and (min-width: 1200px) {
+    .header-bg > div {
+       max-width: 1330px;
+       margin: auto;
+    }
 }
 </style>

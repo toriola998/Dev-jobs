@@ -358,4 +358,13 @@ export default {
     }
 }
 
+
+@media only screen and (min-width: 1200px) {
+    form >div,
+    .job-container {
+        max-width: 1330px;
+        margin: auto;
+    }
+}
+
 </style>
