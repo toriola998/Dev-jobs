@@ -187,7 +187,7 @@ export default {
         background-color: #fff;
         border-top-right-radius: 5px;
         border-top-left-radius: 5px;
-        margin-top: 3rem;
+        margin-top: 5rem;
         padding: 0 1.5rem;
     }
 
@@ -248,7 +248,7 @@ export default {
     
     .footer > .flex{
         justify-content: space-between;
-        height: 8rem;
+        height: 5rem;
     }
 
     .footer-job {
@@ -257,13 +257,23 @@ export default {
 }
 
 @media only screen and (min-width: 700px) {
+    .logo-bg img{
+        height: 1.5rem;
+    }
+
+    h1, h3, .footer h2 {
+        font-size: 1.4rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+    
     .job-details {
         padding: 2rem 4rem;
     }
 
-    /* .footer {
-        padding: 0 4rem;
-    } */
+    
 }
 
 @media only screen and (min-width: 900px) {
@@ -288,6 +298,10 @@ export default {
 
     .details-wrap  {
         padding: 0 5rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
     }
 }
 </style>
