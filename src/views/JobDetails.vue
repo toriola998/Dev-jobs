@@ -1,5 +1,6 @@
 <template>
     <header>
+        <HeaderBackground />
         <div class="heading">
             <div class="heading-inner"> 
                 <div class="flex logo-bg" :style="{backgroundColor: job.logoBackground}">
@@ -64,6 +65,7 @@
 <script>
 import jobs from '../data.json'
 import BlueButton from './../components/BlueButton.vue'
+import HeaderBackground from './../components/HeaderBackground.vue'
 export default {
     name: 'JobDetails',
     data() {
@@ -73,7 +75,8 @@ export default {
     },
 
     components: {
-        BlueButton
+        BlueButton,
+        HeaderBackground
     },  
 
     computed: {
@@ -100,7 +103,7 @@ export default {
 
 <style scoped>
     .heading {
-        margin: 4rem 0 2rem;
+        margin: -2rem 0 2rem;
         padding: 0 1.5rem;
     }
 

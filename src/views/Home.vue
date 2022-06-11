@@ -1,22 +1,6 @@
 <template>
     <header>
-        <div class="flex">
-            <router-link to="/">
-                <img src="./../assets/desktop/logo.svg" 
-                    alt="devjobs - Home"
-                    width="112" height="32"/>
-            </router-link>
-
-            <div class="flex">
-                <img src="./../assets/desktop/icon-sun.svg" 
-                     alt="light mode on" 
-                     width="20" height="19"/>
-                <img src="./../assets/desktop/icon-moon.svg" 
-                     alt="dark mode on" 
-                     width="12" height="12" />
-            </div>
-        </div>
-
+        <HeaderBackground />
         <form @submit.prevent="">
             <div class="search-wrap flex">
                 <div class="flex">
@@ -90,6 +74,7 @@
 
 <script>
 import jobs from '../data.json'
+import HeaderBackground from './../components/HeaderBackground.vue'
 export default {
     data (){
         return {
@@ -99,6 +84,10 @@ export default {
            jobLocation: "",
            isFullTime: null,
         }
+    },
+
+    components: {
+        HeaderBackground
     },
 
     methods: {
@@ -136,23 +125,12 @@ export default {
 </script>
 
 <style scoped>
-    header {
-        background: url('./../assets/mobile/bg-pattern-header.svg');
-        background-color: var(--blue);
-        width: 100%;
-        height: 9rem;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        padding: 1.5rem 1.5rem 0;
-    }
-
-    header > div {
-        justify-content: space-between; 
-    }
-
     .tab-search {
         display: none;
+    }
+
+    form {
+        padding: 0 1.5rem;
     }
 
     .search-wrap {
@@ -161,7 +139,7 @@ export default {
         border-radius: 5px;
         padding: 0 1rem;
         position: relative;
-        top: 3rem;
+        top: -2rem;
         justify-content: space-between;
     }
 
@@ -179,12 +157,13 @@ export default {
     }
 /**MAIN STYLING STARTS */
     main {
-        padding: 6rem 1.5rem 4rem;
+        padding: 4rem 1.5rem 4rem;
     }
 
     .each-job {
         margin-bottom: 3rem;
         display: inline-block;
+        width: 100%;
     }
 
     button:hover,
@@ -254,9 +233,9 @@ export default {
         margin-top: 1.4rem;
     }
 @media only screen and (min-width: 520px) {
-     header {
-        padding: 1.5rem 4rem 0;
-    }
+    form {
+        padding: 0 4rem ;
+    } 
 
     main {
         padding: 6rem 4rem 0;
@@ -268,9 +247,9 @@ export default {
 }
 
 @media only screen and (min-width: 600px) {
-    header {
-        padding: 1.5rem 1.5rem 0;
-    }
+   form {
+        padding: 0 1.5rem ;
+    } 
 
     main {
         padding: 6rem 1.5rem 4rem;
@@ -289,13 +268,12 @@ export default {
 }
 
 @media only screen and (min-width: 720px) {
-    header {
-        padding: 2rem 3rem 0;
-        background: url('./../assets/tablet/bg-pattern-header.svg');
-    }
+    form {
+        padding: 0 3rem ;
+    } 
 
     main {
-        padding: 8rem 3rem 4rem;
+        padding: 4rem 3rem;
     }
 
      .overlay {
@@ -310,7 +288,7 @@ export default {
 
     .location-job-type {
         position: absolute;
-        top: -0.6rem;
+        bottom: 2.5rem;
         right: 1rem;
         width: 73%;
         justify-content: space-between;
@@ -347,55 +325,32 @@ export default {
 }
 
 @media only screen and (min-width: 900px) {
-    header {
-        padding: 3rem 8rem 0;
-        background: url('./../assets/desktop/bg-pattern-header.svg');
-        height: 10rem;
-    }
-
     main {
-        padding: 8rem 8rem 4rem;
+        padding: 4rem 8rem;
     }
 
     .location-job-type {
-        top: -1rem;
         width: 65%;
-    }
-
-    .search-wrap {
-        top: 2.5rem;
     }
 }
 
 @media only screen and (min-width: 1100px) {
-    header {
-        padding: 2rem 3rem 0;
-    }
-
     main {
-        padding: 8rem 3rem 4rem;
+        padding: 4rem 3rem;
     }
 
     .job-container {
         grid-template-columns: auto auto auto;
     }
-
-    .search-wrap {
-        top: 3.5rem;
-    }
-
-    .location-job-type {
-        top: 0;
-    }
 }
 
 @media only screen and (min-width: 1200px) {
-    header {
-        padding: 2rem 10rem 0;
+    form {
+        padding: 0 10rem;
     }
 
     main {
-        padding: 8rem 10rem 4rem;
+        padding: 4rem 10rem;
     }
 
     .job-container {
