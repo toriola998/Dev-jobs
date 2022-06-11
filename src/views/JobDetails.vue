@@ -270,7 +270,7 @@ export default {
     .heading,
     .details-wrap,
     .footer {
-        padding: 0 8rem;
+        padding: 0 10rem;
     }
 
     .job-details {
@@ -282,7 +282,7 @@ export default {
     .heading-inner,
     .job-details,
     .footer > .flex {
-        max-width: 900px;
+        max-width: 45rem;
         margin: auto;
     }
 
