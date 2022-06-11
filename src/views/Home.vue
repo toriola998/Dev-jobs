@@ -331,6 +331,10 @@ export default {
         padding: 4rem 8rem;
     }
 
+    form {
+        padding: 0 8rem;
+    }
+
     .location-job-type {
         width: 65%;
     }  
@@ -339,6 +343,10 @@ export default {
 @media only screen and (min-width: 1100px) {
     main {
         padding: 4rem 3rem;
+    }
+
+    form {
+        padding: 0 3rem;
     }
 
    .each-job {
@@ -351,7 +359,7 @@ export default {
    }
 
    h2 {
-       font-size: 1.3rem;
+       font-size: 1.25rem;
    }
 
    h2:hover {
