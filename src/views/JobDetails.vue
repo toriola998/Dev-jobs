@@ -206,11 +206,7 @@ export default {
         height: 7rem;
         width: 8rem;
     }
-
-    .logo-bg img{
-        height: 1rem;
-    }
-
+    
     h1,
     .site-name {
         text-align: initial;
@@ -260,10 +256,6 @@ export default {
 }
 
 @media only screen and (min-width: 700px) {
-    .logo-bg img{
-        height: 1.5rem;
-    }
-
     h1, h3, .footer h2 {
         font-size: 1.4rem;
     }

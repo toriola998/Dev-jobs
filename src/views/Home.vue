@@ -232,6 +232,7 @@ export default {
         border-radius: 5px;
         margin-top: 1.4rem;
     }
+
 @media only screen and (min-width: 520px) {
     form {
         padding: 0 4rem ;
@@ -256,14 +257,15 @@ export default {
     }
 
     .job-container {
-        display: grid;
-        grid-template-columns: auto auto;
+        display: flex;
+        flex-wrap: wrap;
         column-gap: 1rem;
         row-gap: 3rem;
     } 
     
      .each-job {
         margin-bottom: initial;
+        width: 48.5%;
     }
 }
 
@@ -276,7 +278,7 @@ export default {
         padding: 4rem 3rem;
     }
 
-     .overlay {
+    .overlay {
         display: flex !important;
         position: relative;
     }
@@ -331,7 +333,7 @@ export default {
 
     .location-job-type {
         width: 65%;
-    }
+    }  
 }
 
 @media only screen and (min-width: 1100px) {
@@ -339,9 +341,26 @@ export default {
         padding: 4rem 3rem;
     }
 
-    .job-container {
-        grid-template-columns: auto auto auto;
-    }
+   .each-job {
+       width: 32%;
+       transition: all 0.5s;
+   }
+
+   .each-job:hover {
+       transform: scale(0.95);
+   }
+
+   h2 {
+       font-size: 1.3rem;
+   }
+
+   h2:hover {
+       color:var(--grey);
+   }
+
+   input:hover {
+       cursor: pointer;
+   }
 }
 
 @media only screen and (min-width: 1200px) {
@@ -352,14 +371,10 @@ export default {
     main {
         padding: 4rem 10rem;
     }
-
-    .job-container {
-        column-gap: 2rem;
-    }
 }
 
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1400px) {
     form >div,
     .job-container {
         max-width: 1330px;
