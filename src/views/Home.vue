@@ -20,7 +20,7 @@
                             alt="click to filter by location and fulltime" 
                             width="20" height="20"/>
                     </button>
-                    <button class="blue-search flex">
+                    <button class="blue-search flex" @click="searchJob()">
                         <img src="./../assets/mobile/icon-search.svg" 
                              alt="search by title"/>
                     </button>
@@ -90,6 +90,8 @@ export default {
         HeaderBackground
     },
 
+    /** When you click on search, n */
+
     methods: {
         searchJob() {
             this.jobs = jobs;
@@ -104,6 +106,9 @@ export default {
                 } 
             })
             this.jobs = this.allJobs;
+
+            //Remove overlay
+            this.showOverlay = false   
         }
     }
 }
