@@ -90,7 +90,9 @@ export default {
         HeaderBackground
     },
 
-    /** When you click on search, n */
+    /** When you click on search, make the this.jobs array equal to the whole array from data.json.
+     * Then make the this.allJobs array equal to this.jobs filter, if the checkbox is checked, show only full-time jobs; else show all jobs.
+     * Then make the this.jobs array be the filtered array */
 
     methods: {
         searchJob() {
